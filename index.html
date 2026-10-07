@@ -39,6 +39,7 @@
     .category-label { font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--carvao); margin: 28px 0 12px; }
     .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 + .grid-3 { margin-top: 14px; }
     .card { background: var(--branco); border: 1.5px solid #86efac; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px; transition: box-shadow 0.2s, transform 0.2s; }
     .card:hover { box-shadow: 0 4px 18px rgba(74,79,84,0.09); transform: translateY(-2px); }
     .card-pago { background: #fffaf7; border-color: var(--laranja); }
@@ -51,14 +52,20 @@
     .card-title { font-size: 14px; font-weight: 600; color: var(--carvao); line-height: 1.35; }
     .card-desc { font-size: 13px; color: var(--cinza-texto); line-height: 1.55; flex: 1; }
     .card-footer { display: flex; flex-direction: column; gap: 7px; margin-top: 2px; }
+    .card-footer .btn-small { width: auto; }
+    .card-oquevc .card-footer { display: block; }
+    .card-oquevc .card-footer .btn-small { display: inline-flex; }
     .btn-acessar { display: flex; align-items: center; justify-content: center; background: var(--branco); color: #16a34a; font-family: "DM Sans", sans-serif; font-size: 13px; font-weight: 600; padding: 10px 16px; border-radius: 9px; text-decoration: none; border: 1.5px solid #16a34a; transition: background-color 0.2s; }
     .btn-acessar:hover { background-color: #f0fdf4; }
     .btn-exclusivo { display: flex; align-items: center; justify-content: center; background: var(--branco); color: var(--laranja); font-family: "DM Sans", sans-serif; font-size: 13px; font-weight: 600; padding: 10px 16px; border-radius: 9px; text-decoration: none; border: 1.5px solid var(--laranja); transition: background-color 0.2s; }
     .btn-exclusivo:hover { background-color: #fff0e6; }
+    .btn-small { display: inline-flex; align-items: center; justify-content: center; background: var(--branco); color: var(--laranja); font-family: "DM Sans", sans-serif; font-size: 13px; font-weight: 600; padding: 10px 16px; border-radius: 9px; text-decoration: none; border: 1.5px solid var(--laranja); transition: background-color 0.2s; }
+    .btn-small:hover { background-color: #fff0e6; }
     .btn-em-breve { display: flex; align-items: center; justify-content: center; background: var(--bege); color: var(--cinza-texto); font-family: "DM Sans", sans-serif; font-size: 13px; padding: 10px 16px; border-radius: 9px; border: none; cursor: default; }
     .saiba-mais { font-size: 12px; color: var(--cinza-texto); text-decoration: none; text-align: center; transition: color 0.2s; }
     .saiba-mais:hover { color: var(--teal); }
     .em-breve-text { font-size: 13px; color: var(--verde); font-weight: 400; text-align: center; display: block; }
+    .card-oquevc { background: linear-gradient(135deg, #fdf8f3 0%, #f0fef8 100%); border-color: var(--laranja); grid-column: 1 / -1; }
     .footer { text-align: center; padding: 22px; font-size: 13px; color: var(--cinza-texto); border-top: 1px solid var(--cinza-borda); }
     .footer a { color: var(--laranja); text-decoration: none; font-weight: 500; }
     @media (max-width: 700px) {
@@ -177,12 +184,6 @@
         <div class="card-title">Upgrade Alimentar</div>
         <div class="card-desc">Você lista três alimentos que come com frequência e recebe alternativas mais favoráveis à longevidade.</div>
       </div>
-      <div class="card card-pago">
-        <div class="card-top"><span class="badge badge-exclusivo">Exclusivo</span></div>
-        <div class="card-title">Todos os Arquivos</div>
-        <div class="card-desc">Acesso direto a todo o arquivo de artigos e materiais extras do VLF.</div>
-        <div class="card-footer"><a href="https://vidalongaefeliz.substack.com/archive" target="_blank" class="btn-exclusivo">Ver arquivo</a></div>
-      </div>
     </div>
 
     <p class="category-label">Materiais e Recursos Extras</p>
@@ -201,6 +202,19 @@
         <div class="card-top"><span class="badge badge-exclusivo">Exclusivo</span></div>
         <div class="card-title">Posts de Perguntas e Respostas</div>
         <div class="card-desc">Você envia a pergunta, eu respondo com informação prática e baseada em ciência.</div>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="card card-pago">
+        <div class="card-top"><span class="badge badge-exclusivo">Exclusivo</span></div>
+        <div class="card-title">Visuais</div>
+        <div class="card-desc">Infográficos que resumem conceitos, e storybooks que explicam técnicas de um jeito simples. Para todas as idades.</div>
+      </div>
+      <div class="card card-pago">
+        <div class="card-top"><span class="badge badge-exclusivo">Exclusivo</span></div>
+        <div class="card-title">Todos os Arquivos</div>
+        <div class="card-desc">Acesso direto a todo o arquivo de artigos e materiais extras do VLF.</div>
+        <div class="card-footer"><a href="https://vidalongaefeliz.substack.com/archive" target="_blank" class="btn-exclusivo">Ver arquivo</a></div>
       </div>
     </div>
 
@@ -226,15 +240,15 @@
       </div>
     </div>
 
-    <p class="category-label">Explore Tudo</p>
     <div class="grid-3">
-      <div class="card card-pago">
+      <div class="card card-pago card-oquevc">
         <div class="card-top"><span class="badge badge-exclusivo">Exclusivo</span></div>
         <div class="card-title">O Que Você Ganha</div>
         <div class="card-desc">Uma coleção de conteúdos e ferramentas para você ir além dos artigos.</div>
-        <div class="card-footer"><a href="https://vidalongaefeliz.substack.com/perks" target="_blank" class="btn-exclusivo">Acesse tudo aqui →</a></div>
+        <div class="card-footer"><a href="https://vidalongaefeliz.substack.com/perks" target="_blank" class="btn-small">Acesse tudo aqui →</a></div>
       </div>
     </div>
+
 
   </div>
 
